@@ -1,3 +1,4 @@
+import { Navbar } from "@/components/Navbar";
 import "./globals.css";
 
 export default function RootLayout({
@@ -8,8 +9,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-white text-black dark:bg-black dark:text-white transition-colors duration-500">
+        <Navbar />
         {children}
-        <h1>hello next level fitness tracker</h1>
       </body>
     </html>
   );
