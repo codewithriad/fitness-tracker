@@ -1,9 +1,11 @@
 import HeroSwiper from "@/components/HeroSwiper";
+import WorkoutCard from "@/components/workouts/WorkoutCard";
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-background text-foreground">
       <HeroSwiper />
+      <WorkoutCard/>
       
       {/* Placeholder for future sections */}
       <div className="container py-16 text-center">

@@ -2,9 +2,9 @@
 
 import { Button } from "@/components/ui/button"
 import {
-    Sheet,
-    SheetContent,
-    SheetTrigger,
+  Sheet,
+  SheetContent,
+  SheetTrigger,
 } from "@/components/ui/sheet"
 import { Menu } from "lucide-react"
 import Image from "next/image"
@@ -26,14 +26,13 @@ export function Navbar() {
         {/* Logo */}
         <div className="flex-shrink-0 flex items-center">
           <Link href="/">
-             <div className="relative h-32 w-60 overflow-hidden">
+             <div className="relative h-auto w-auto aspect-[3/1] min-w-[100px] overflow-hidden">
                 <Image
                   src="/logo.jpg"
                   alt="FIT TRACK"
                   width={150}
-                  height={32}
-                  className="object-contain"
-                  style={{ width: 'auto', height: '100%' }}
+                  height={150}
+                  className="object-contain object-left h-full w-auto"
                   priority
                 />
              </div>
