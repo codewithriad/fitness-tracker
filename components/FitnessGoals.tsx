@@ -1,24 +1,24 @@
 
 const goalsData = [
   {
-    title: "Muscle Building",
+    title: "Quality Equipment",
     description: "Build lean muscle mass with our targeted strength training programs designed for maximum growth and definition.",
-    image: "/goals/muscle.jpg"
+    image: "/goals/QualityEquipment.png"
   },
   {
-    title: "Weight Loss",
+    title: "Healthy Nutrition Plan",
     description: "Achieve your ideal weight through our comprehensive fat-burning workouts and nutrition guidance.",
-    image: "/goals/weightloss.jpg"
+    image: "/goals/HealthyNutritionPlan.png"
   },
   {
-    title: "Endurance",
+    title: "Shower Service",
     description: "Boost your stamina and cardiovascular health with progressive endurance training programs.",
-    image: "/goals/endurance.jpg"
+    image: "/goals/ShowerService.png"
   },
   {
-    title: "Flexibility",
+    title: "Unique to Your Needs",
     description: "Improve your range of motion and prevent injuries with our flexibility and mobility training.",
-    image: "/goals/flexibility.jpg"
+    image: "/goals/UniquetoYourNeeds.png"
   }
 ];
 
@@ -38,25 +38,24 @@ const FitnessGoals = () => {
         </div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
           {goalsData.map((goal, index) => (
             <div 
               key={index}
-              className="group bg-card rounded-2xl overflow-hidden border hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+              className="bg-card rounded-2xl overflow-hidden"
             >
               {/* Image */}
-              <div className="relative h-48 md:h-56 w-full overflow-hidden bg-muted">
-                <div 
-                  className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
-                  style={{ backgroundImage: `url(${goal.image})` }}
-                >
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                </div>
+              <div className="relative h-24 md:h-28 w-full overflow-hidden flex items-center justify-center">
+                <img 
+                  src={goal.image}
+                  alt={goal.title}
+                  className="w-16 md:w-20 h-auto object-contain"
+                />
               </div>
 
               {/* Content */}
-              <div className="p-6">
-                <h3 className="text-xl md:text-2xl font-bold mb-3">
+              <div className="pt-2 px-4 pb-4 text-center">
+                <h3 className="text-base md:text-xl font-semibold mb-2 text-gray-700 dark:text-gray-300 hover:text-secondary transition-colors duration-300">
                   {goal.title}
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
