@@ -1,3 +1,4 @@
+import FitnessGoals from "@/components/FitnessGoals";
 import HeroSwiper from "@/components/HeroSwiper";
 import TrainingPrograms from "@/components/TrainingPrograms";
 import WhatWeOffer from "@/components/WhatWeOffer";
@@ -12,9 +13,10 @@ export default function Home() {
       <VideoSection />
       <WhatWeOffer />
       <TrainingPrograms />
+      <FitnessGoals />
       
       {/* Placeholder for future sections */}
-      <div className="container py-16 text-center"></div>
+     
     </main>
   );
 }
