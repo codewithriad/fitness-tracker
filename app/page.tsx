@@ -1,3 +1,5 @@
+import BmiCalculator from "@/components/BmiCalculator";
+import ClassesTimetable from "@/components/ClassesTimetable";
 import FitnessGoals from "@/components/FitnessGoals";
 import HeroSwiper from "@/components/HeroSwiper";
 import TrainingPrograms from "@/components/TrainingPrograms";
@@ -14,6 +16,9 @@ export default function Home() {
       <WhatWeOffer />
       <TrainingPrograms />
       <FitnessGoals />
+      <BmiCalculator/>
+      <ClassesTimetable/>
+      
       
       {/* Placeholder for future sections */}
      

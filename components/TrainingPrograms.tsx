@@ -1,4 +1,5 @@
 import { ArrowRight } from 'lucide-react';
+import Image from 'next/image';
 
 const programData = [
   {
@@ -65,11 +66,17 @@ const DetailBox = ({ program, index }: { program: typeof programData[0], index: 
 
 const ImageBox = ({ program }: { program: typeof programData[0] }) => (
   <div className="aspect-square w-full h-full relative overflow-hidden group">
-    <div 
-      className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-in-out group-hover:scale-110"
-      style={{ backgroundImage: `url(${program.image})` }}
-    >
-      <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300" />
+    <div className="absolute inset-0 transition-transform duration-700 ease-in-out group-hover:scale-110">
+      <Image
+        src={program.image}
+        alt={program.title}
+        fill
+        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+        className="object-cover"
+        priority
+        quality={75}
+      />
+      <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300 z-10" />
     </div>
   </div>
 );

@@ -1,4 +1,5 @@
 import { Heart, User, Users } from 'lucide-react';
+import Image from 'next/image';
 
 const workoutTypes = [
   {
@@ -29,17 +30,25 @@ const WorkoutCard = () => {
           key={index} 
           className="group relative h-[500px] w-full overflow-hidden"
         >
-          {/* Background Image */}
-          <div 
-            className="absolute inset-0 bg-cover bg-center transition-all duration-500 group-hover:scale-110 group-hover:blur-sm"
-            style={{ backgroundImage: `url(${workout.image})` }}
-          />
+          {/* Background Image - Optimized with Next.js Image */}
+          <div className="absolute inset-0">
+            <Image
+              src={workout.image}
+              alt={workout.title}
+              fill
+              sizes="(max-width: 768px) 100vw, 33vw"
+              quality={75}
+              priority={index === 0} // Load first image with priority
+              loading={index === 0 ? undefined : 'lazy'} // Lazy load other images
+              className="object-cover transition-all duration-500 group-hover:scale-110 group-hover:blur-sm"
+            />
+          </div>
           
           {/* Overlay */}
-          <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-colors duration-300" />
+          <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-colors duration-300 z-10" />
           
           {/* Content */}
-          <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center text-white">
+          <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center text-white z-20">
             <div className="transform transition-all duration-300 group-hover:-translate-y-4">
               <workout.icon className="mx-auto mb-4 h-12 w-12" />
               <h3 className="text-3xl font-bold uppercase tracking-wider">{workout.title}</h3>

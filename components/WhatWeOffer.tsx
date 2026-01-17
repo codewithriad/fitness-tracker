@@ -1,4 +1,5 @@
 import { CheckCircle } from 'lucide-react';
+import Image from 'next/image';
 
 const offers = [
   "Personalized Workout Plans",
@@ -42,21 +43,35 @@ const WhatWeOffer = () => {
           </div>
 
           {/* Right Column - Images */}
-          <div className="relative h-[600px] w-full">
+          <div className="relative h-[300px] md:h-[600px] w-full">
             {/* Image 1 - Top Right */}
-            <div 
-              className="absolute top-0 right-4 w-[55%] h-[85%] bg-cover bg-center rounded-2xl shadow-xl z-10"
-              style={{ backgroundImage: "url('/workoutTypes/workoutType1.jpg')", backgroundPosition: "center", backgroundSize: "cover" }}
-            />
+            <div className="absolute top-0 right-2 md:right-4 w-[55%] h-[80%] md:h-[85%] rounded-2xl shadow-xl z-10 overflow-hidden">
+              <Image
+                src="/workoutTypes/workoutType1.jpg"
+                alt="Fitness workout training"
+                fill
+                sizes="(max-width: 768px) 40vw, 30vw"
+                className="object-cover"
+                priority
+                quality={75}
+              />
+            </div>
             
             {/* Image 2 - Bottom Left */}
-            <div 
-              className="absolute bottom-0 left-4 w-[55%] h-[85%] bg-cover bg-center rounded-2xl shadow-xl z-20 border-8 border-background"
-              style={{ backgroundImage: "url('/workoutTypes/workoutType3.jpg')", backgroundPosition: "center", backgroundSize: "cover" }}
-            />
+            <div className="absolute bottom-0 left-2 md:left-4 w-[55%] h-[80%] md:h-[85%] rounded-2xl shadow-xl z-20 overflow-hidden border-4 md:border-8 border-background">
+              <Image
+                src="/workoutTypes/workoutType3.jpg"
+                alt="Fitness strength training"
+                fill
+                sizes="(max-width: 768px) 40vw, 30vw"
+                className="object-cover"
+                priority
+                quality={75}
+              />
+            </div>
             
             {/* Decorative Element */}
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-primary/10 rounded-full blur-3xl -z-10" />
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 md:w-64 h-32 md:h-64 bg-primary/10 rounded-full blur-3xl -z-10" />
           </div>
 
         </div>
