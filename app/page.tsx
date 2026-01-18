@@ -1,7 +1,9 @@
 import BmiCalculator from "@/components/BmiCalculator";
 import ClassesTimetable from "@/components/ClassesTimetable";
+import ExerciseSteps from "@/components/ExerciseSteps";
 import FitnessGoals from "@/components/FitnessGoals";
 import HeroSwiper from "@/components/HeroSwiper";
+import MeetOurTeam from "@/components/MeetOurTeam";
 import TrainingPrograms from "@/components/TrainingPrograms";
 import WhatWeOffer from "@/components/WhatWeOffer";
 import VideoSection from "@/components/workouts/VideoSection";
@@ -15,9 +17,11 @@ export default function Home() {
       <VideoSection />
       <WhatWeOffer />
       <TrainingPrograms />
+      <ExerciseSteps />
       <FitnessGoals />
       <BmiCalculator/>
       <ClassesTimetable/>
+      <MeetOurTeam />
       
       
       {/* Placeholder for future sections */}
